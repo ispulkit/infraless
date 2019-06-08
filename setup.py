@@ -1,10 +1,13 @@
 from setuptools import setup, find_packages
+from infraless.core.version import get_version
 
 VERSION = get_version()
 
-f = open('README.md', 'r')
-LONG_DESCRIPTION = f.read()
-f.close()
+with open('README.md', 'r') as readme_file:
+    LONG_DESCRIPTION = readme_file.read()
+
+with open('requirements.txt') as reqs:
+    requirements = reqs.read()
 
 setup(
     name='infraless',
@@ -19,6 +22,9 @@ setup(
     packages=find_packages(exclude=['ez_setup', 'tests*']),
     package_data={'infraless': ['templates/*']},
     include_package_data=True,
+    install_requires=[
+        requirements,
+    ],
     entry_points="""
         [console_scripts]
         infraless = infraless.cli_router:main
