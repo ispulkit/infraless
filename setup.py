@@ -1,5 +1,4 @@
 from setuptools import setup, find_packages
-from stocksense.core.version import get_version
 
 VERSION = get_version()
 
@@ -18,10 +17,10 @@ setup(
     url='https://github.com/ispulkit',
     license='unlicensed',
     packages=find_packages(exclude=['ez_setup', 'tests*']),
-    package_data={'stocksense': ['templates/*']},
+    package_data={'infraless': ['templates/*']},
     include_package_data=True,
     entry_points="""
         [console_scripts]
-        stocksense = stocksense.main:main
+        infraless = src.cli_router:main
     """,
 )
