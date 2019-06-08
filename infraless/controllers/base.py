@@ -54,7 +54,9 @@ class Base(Controller):
         ],
     )
     def test(self):
-        """Example test command."""
+        """
+        CLI test command.
+        """
 
         data = {
             'foo': 'bar',
@@ -63,4 +65,4 @@ class Base(Controller):
         # do something with arguments
         if self.app.pargs.foo is not None:
             data['foo'] = self.app.pargs.foo
-        self.app.render(data, 'command1.jinja2')
+        self.app.render(data, 'test.jinja2')
