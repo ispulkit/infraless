@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-src/main.py
+infraless/main.py
 
 """
 from cement import App, TestApp, init_defaults

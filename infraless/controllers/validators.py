@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-src/controllers/validators.py
+infraless/controllers/validators.py
 
 """
 from PyInquirer import (ValidationError, Validator)
