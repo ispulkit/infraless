@@ -21,6 +21,6 @@ setup(
     include_package_data=True,
     entry_points="""
         [console_scripts]
-        infraless = src.cli_router:main
+        infraless = infraless.cli_router:main
     """,
 )
