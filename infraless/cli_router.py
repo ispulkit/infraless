@@ -7,7 +7,7 @@ infraless/main.py
 from cement import App, TestApp, init_defaults
 from cement.core.exc import CaughtSignal
 
-from .controllers.base import Base
+from .controllers import Base, Generate
 from .core.exc import InfralessError
 from .core import helpers as hlprs
 
@@ -48,7 +48,7 @@ class InfraLess(App):
         output_handler = 'jinja2'
 
         # register handlers
-        handlers = [Base]
+        handlers = [Base, Generate]
 
 
 class InfraLessTest(TestApp, InfraLess):
