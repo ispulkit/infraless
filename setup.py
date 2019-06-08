@@ -1,7 +1,4 @@
 from setuptools import setup, find_packages
-from infraless.core.version import get_version
-
-VERSION = get_version()
 
 with open('README.md', 'r') as readme_file:
     LONG_DESCRIPTION = readme_file.read()
@@ -11,7 +8,7 @@ with open('requirements.txt') as reqs:
 
 setup(
     name='infraless',
-    version=VERSION,
+    version='0.0.1-alpha',
     description='Run your code at scale without worrying about the cloud',
     long_description=LONG_DESCRIPTION,
     long_description_content_type='text/markdown',
