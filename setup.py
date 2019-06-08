@@ -1,14 +1,21 @@
-from setuptools import setup, find_packages
+try:
+    from setuptools import setup, find_packages
+except ImportError:
+    from distutils.core import setup, find_packages
 
-with open('README.md', 'r') as readme_file:
-    LONG_DESCRIPTION = readme_file.read()
+try:
+    import pypandoc
+    LONG_DESCRIPTION = pypandoc.convert('README.md', 'rst')
+except:
+    with open('README.md', 'r') as readme_file:
+        LONG_DESCRIPTION = readme_file.read()
 
-with open('requirements.txt') as reqs:
-    requirements = reqs.read()
+with open('requirements.txt', 'r') as req:
+    requirements = req.read()
 
 setup(
     name='infraless',
-    version='0.0.1-alpha',
+    version='0.0.05-alpha',
     description='Run your code at scale without worrying about the cloud',
     long_description=LONG_DESCRIPTION,
     long_description_content_type='text/markdown',
@@ -17,7 +24,9 @@ setup(
     url='https://github.com/ispulkit',
     license='unlicensed',
     packages=find_packages(exclude=['ez_setup', 'tests*']),
-    package_data={'infraless': ['templates/*']},
+    package_data={
+        'infraless': ['templates/*'],
+    },
     include_package_data=True,
     install_requires=[
         requirements,
