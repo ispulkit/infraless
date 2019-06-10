@@ -9,10 +9,10 @@ import os
 from cement import Controller, ex
 from PyInquirer import Token, prompt, style_from_dict
 
-from ..controllers.validators import EmptyValidator
-from ..core import config
-from ..core import helpers as hlprs
-from ..core.exc import InfralessError
+from infraless.controllers.validators import EmptyValidator
+from infraless.core import config
+from infraless.core import helpers as hlprs
+from infraless.core.exc import InfralessError
 
 style = style_from_dict({
     Token.QuestionMark: '#E91E63 bold',

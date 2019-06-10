@@ -5,7 +5,7 @@ import os
 
 import yaml
 
-from ..core.exc import InfralessError
+from infraless.core.exc import InfralessError
 
 INFRALESS_CONST_CONFIG_FILENAME = '.ilconfig'
 

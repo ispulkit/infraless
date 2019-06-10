@@ -7,9 +7,9 @@ infraless/main.py
 from cement import App, TestApp, init_defaults
 from cement.core.exc import CaughtSignal
 
-from .controllers import Base, Generate
-from .core.exc import InfralessError
-from .core import helpers as hlprs
+from infraless.controllers import Base, Generate
+from infraless.core.exc import InfralessError
+from infraless.core import helpers as hlprs
 
 # configuration defaults
 CONFIG = init_defaults('todo')

@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 try:
     from setuptools import setup, find_packages
 except ImportError:
@@ -15,7 +18,7 @@ with open('requirements.txt', 'r') as req:
 
 setup(
     name='infraless',
-    version='0.0.05-alpha',
+    version='0.0.06-alpha',
     description='Run your code at scale without worrying about the cloud',
     long_description=LONG_DESCRIPTION,
     long_description_content_type='text/markdown',

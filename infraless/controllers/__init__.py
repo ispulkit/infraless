@@ -1,2 +1,2 @@
-from .base import Base
-from .generate import Generate
+from infraless.controllers.base import Base
+from infraless.controllers.generate.generate import Generate

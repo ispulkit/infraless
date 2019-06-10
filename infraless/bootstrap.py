@@ -1,4 +1,4 @@
-from .controllers.base import Base
+from infraless.controllers.base import Base
 
 
 def load(app):
