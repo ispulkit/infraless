@@ -35,6 +35,6 @@ def validate_ilconfig():
     ilassert_ilconfig_exists()
     with open(INFRALESS_CONST_CONFIG_FILENAME, 'r') as stream:
         try:
-            print(yaml.safe_load(stream))
+            ilconfig = yaml.safe_load(stream)
         except yaml.YAMLError:
             raise InfralessError('Invalid .ilconfig found.')

@@ -5,10 +5,12 @@ infraless/controllers/generate.py
 
 """
 import os
+import sys
 
 from cement import Controller, ex
 from PyInquirer import Token, prompt, style_from_dict
 
+from infraless.controllers.generate import engine_helpers
 from infraless.controllers.validators import EmptyValidator
 from infraless.core import config
 from infraless.core import helpers as hlprs
@@ -75,4 +77,15 @@ class Generate(Controller):
             raise InfralessError('Engine name not specified.')
         engine_type = self.enginetype
         config.validate_ilconfig()
+        engine_helpers.check_engine_project_modules()
+
+        try:
+            os.mkdir(engine_name)
+        except FileExistsError:
+            raise InfralessError('Engine already exists.')
+        with open(engine_name + '/__init__.py', 'w') as py_module:
+            py_module.write('')
+        with open(engine_name + '/local.ipynb', 'w') as py_module:
+            py_module.write('')
+
         hlprs.log("Engine: {} added".format(engine_name), "green")

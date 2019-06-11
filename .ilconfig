@@ -1,0 +1,4 @@
+engine_provider: aws
+idl:
+    name: terraform
+    version: 11
